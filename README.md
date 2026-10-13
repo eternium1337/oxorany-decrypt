@@ -1,5 +1,5 @@
 # oxorany_decrypt
-base way to decrypt strings protected by oxorany 
+base way to decrypt strings protected by oxorany (in arm64-v8a)
 
 # Watch this to continue!
 
@@ -73,3 +73,6 @@ print(data.decode("utf-8", errors="replace").rstrip("\x00"))
 <img width="670" height="487" alt="изображение" src="https://github.com/user-attachments/assets/e4634d2a-77bd-4c94-8039-77db37a89488" />
 
 done!
+
+
+for test try on libtest.so
