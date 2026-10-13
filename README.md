@@ -75,4 +75,4 @@ print(data.decode("utf-8", errors="replace").rstrip("\x00"))
 done!
 
 
-for test try on libtest.so
+for test try on libtrain.so
