@@ -62,7 +62,7 @@ bias  = 0x30
 data = bytearray.fromhex(
     "50be53e354bd56b558bc5be90c5dba5e"
     "d060d1638364da66"
-    "D759" #inverted because it is writing by str to 0x18 (0x90-0x78)
+    "D759" #inverted because it is writing by str to 0x18 (0x90-0x78)(le)
 )
 for i in range(len(data)):
     data[i] = (((i + key) ^ data[i]) - bias) & 0xFF
