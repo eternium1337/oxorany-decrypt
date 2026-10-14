@@ -1,5 +1,5 @@
 # oxorany_decrypt
-base way to decrypt strings protected by oxorany (in arm64-v8a)
+base way to decrypt strings protected by oxorany (in arm64-v8a and x64)
 
 # Watch this to continue!
 
@@ -33,7 +33,7 @@ next we extract the byte array
 
 <img width="1103" height="105" alt="изображение" src="https://github.com/user-attachments/assets/f0155007-a971-480a-87bf-1ccae3954fb2" />
 
-and in my script paste our values and run it
+and we paste the values ​​into my script and run it
 
 ````python
 key = 0x3695fc50
@@ -45,7 +45,6 @@ data = bytearray.fromhex(
 for i in range(len(data)):
     data[i] = (((i + key) ^ data[i]) - bias) & 0xFF
 print(data.decode("utf-8", errors="replace").rstrip("\x00"))
-
 ````
 
 <img width="698" height="475" alt="изображение" src="https://github.com/user-attachments/assets/a8f2c119-5245-4613-a910-7cf565661ab1" />
@@ -67,12 +66,44 @@ data = bytearray.fromhex(
 for i in range(len(data)):
     data[i] = (((i + key) ^ data[i]) - bias) & 0xFF
 print(data.decode("utf-8", errors="replace").rstrip("\x00"))
-
 ````
 
 <img width="670" height="487" alt="изображение" src="https://github.com/user-attachments/assets/e4634d2a-77bd-4c94-8039-77db37a89488" />
 
 done!
-
-
 for test try on libtrain.so
+
+
+# x86 & x64
+same work
+but we are patching the instructions that prevent us from seeing the pseudocode
+
+<img width="558" height="467" alt="изображение" src="https://github.com/user-attachments/assets/10b8c16f-f28c-422c-9220-20ceb599427a" />
+
+we immediately see the bytes of our encrypted string bytes
+
+<img width="784" height="880" alt="изображение" src="https://github.com/user-attachments/assets/4eec1900-27df-4cf1-ab66-5a30725d5d4f" />
+
+as in the previous example here too there are only negative conditions
+
+<img width="1106" height="762" alt="изображение" src="https://github.com/user-attachments/assets/72eb2a49-b746-4e0d-ad49-0d3f1a6294b7" />
+
+when we translated encrypted bytes to little endian, we need to paste the values ​​into script and run it
+
+````python
+key  = 0x2F
+bias = 0x1A
+data = bytearray.fromhex(
+    "be9e8487"
+    "8b5d958e"
+    "8c8d9450"
+    "6875"
+)
+for i in range(len(data)):
+    data[i] = (((i + key) ^ data[i]) - (bias + key)) & 0xFF
+print(data.decode("utf-8", errors="ignore"))
+````
+
+<img width="801" height="493" alt="изображение" src="https://github.com/user-attachments/assets/4a38413a-56da-4de4-a276-8b59e08ccf7b" />
+
+done!
