@@ -107,3 +107,6 @@ print(data.decode("utf-8", errors="ignore"))
 <img width="801" height="493" alt="изображение" src="https://github.com/user-attachments/assets/4a38413a-56da-4de4-a276-8b59e08ccf7b" />
 
 done!
+
+
+# i noticed that newcomers struggle with deciphering oxorany, even though it is open source and the schematic is provided
