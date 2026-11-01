@@ -1,13 +1,6 @@
 # oxorany_decrypt
 base way to decrypt strings protected by oxorany (in arm64-v8a and x64)
 
-# Watch this to continue!
-
-[![Watch this to continue](http://img.youtube.com/vi/itKsZDpIxx4/0.jpg)](http://www.youtube.com/watch?v=itKsZDpIxx4)
-
-# Watch this to continue!
-
-
 in our binary file, we immediately see the bytes of our encrypted string bytes being saved into a variable (xmmword_510)
 <img width="591" height="539" alt="изображение" src="https://github.com/user-attachments/assets/40fccd42-797f-44d7-81b7-30b6341c1e9c" />
 
