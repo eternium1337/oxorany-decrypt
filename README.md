@@ -37,7 +37,7 @@ data = bytearray.fromhex(
 )
 for i in range(len(data)):
     data[i] = (((i + key) ^ data[i]) - bias) & 0xFF
-print(data.decode("utf-8", errors="replace").rstrip("\x00"))
+print(data.decode("utf-8", errors="ignore"))
 ````
 
 <img width="698" height="475" alt="изображение" src="https://github.com/user-attachments/assets/a8f2c119-5245-4613-a910-7cf565661ab1" />
@@ -58,7 +58,7 @@ data = bytearray.fromhex(
 )
 for i in range(len(data)):
     data[i] = (((i + key) ^ data[i]) - bias) & 0xFF
-print(data.decode("utf-8", errors="replace").rstrip("\x00"))
+print(data.decode("utf-8", errors="ignore"))
 ````
 
 <img width="670" height="487" alt="изображение" src="https://github.com/user-attachments/assets/e4634d2a-77bd-4c94-8039-77db37a89488" />
